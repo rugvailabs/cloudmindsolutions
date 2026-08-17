@@ -54,9 +54,8 @@ Nothing here ships with a real image, client, or number. Search the codebase for
       Marketplace rather than hardcoding a provider SDK.
 - [x] Logo, favicon, app icons, and OG card — all derived from the supplied
       artwork by `python scripts/logo-assets.py`. Re-run it if new artwork lands.
-- [ ] Real domain, phone, and email in `src/lib/site.ts`
-- [ ] Real WhatsApp number in `src/lib/site.ts` (`company.whatsapp.number`,
-      digits only — currently the placeholder line)
+- [x] Real domain, phone, and email in `src/lib/site.ts`
+- [x] Real WhatsApp number in `src/lib/site.ts` (`company.whatsapp.number`)
 - [ ] Team names, roles, and headshots in `src/lib/about-content.ts`
 - [ ] Legal review of both legal pages — they are drafts, not advice
 - [ ] Confirm retention periods in the privacy policy are actually enforced

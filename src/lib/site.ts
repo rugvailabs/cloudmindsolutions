@@ -9,14 +9,14 @@ export const company = {
     zip: "33702",
     country: "USA",
   },
-  phone: "+1 (727) 555-0180", // [PLACEHOLDER] replace with real line
-  email: "hello@cloudmindsolutions.com", // [PLACEHOLDER]
+  phone: "+1 (331) 230-2826",
+  email: "info@cloudmindsolutionsinc.com",
   whatsapp: {
     /**
-     * [PLACEHOLDER] Digits only — country code first, no “+”, spaces or dashes.
-     * wa.me rejects anything else. US number 727-555-0180 becomes 17275550180.
+     * Digits only — country code first, no “+”, spaces or dashes.
+     * wa.me rejects anything else. US number 331-230-2826 becomes 13312302826.
      */
-    number: "17275550180",
+    number: "13312302826",
     /** Pre-filled first message. Keep it short; it is editable by the sender. */
     message: "Hi CloudMind — I'd like to talk about a project.",
   },
@@ -143,4 +143,4 @@ export const footerNav = [
   },
 ];
 
-export const siteUrl = "https://www.cloudmindsolutions.com"; // [PLACEHOLDER] set real domain
+export const siteUrl = "https://www.cloudmindsolutionsinc.com";
