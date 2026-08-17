@@ -39,6 +39,9 @@ export const IconClose = createIcon("x");
 export const IconSearch = createIcon("search");
 export const IconFilter = createIcon("filter");
 
+/* --- Social ------------------------------------------------------------- */
+export const IconLinkedIn = createIcon("linkedin");
+
 /* --- Status ------------------------------------------------------------- */
 export const IconCheck = createIcon("check");
 export const IconCheckCircle = createIcon("circle-check");

@@ -8,10 +8,20 @@ import { Logo } from "@/components/ui/Logo";
 import { ButtonLink } from "@/components/ui/Button";
 import { IconChevronDown, IconClose, IconMenu } from "@/components/icons";
 import { serviceIcons } from "@/components/icons";
-import { primaryNav, services } from "@/lib/site";
+import { company, primaryNav, services } from "@/lib/site";
 import { EASE_EXPO } from "@/lib/motion";
 
+/**
+ * Supplied LinkedIn mark (public/assets/linkedin-svgrepo-com.svg) — a fixed
+ * two-colour brand glyph, so it is served as-is rather than through the icon
+ * registry, which is currentColor-only. Plain <img> rather than next/image:
+ * Next refuses to optimise SVG unless `dangerouslyAllowSVG` is set globally,
+ * and a 1KB vector has nothing to gain from the optimiser anyway.
+ */
+const LINKEDIN_MARK = "/assets/linkedin-svgrepo-com.svg";
+
 export function Header() {
+  const linkedin = company.social.find((s) => s.label === "LinkedIn");
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
@@ -136,8 +146,20 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* Contact now lives in `primaryNav`, so the right cluster is the CTA only. */}
+        {/* Contact lives in `primaryNav`, so the right cluster is social + CTA. */}
         <div className="hidden items-center gap-3 lg:flex">
+          {linkedin && (
+            <a
+              href={linkedin.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${company.name} on LinkedIn`}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full transition-opacity duration-200 hover:opacity-80"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={LINKEDIN_MARK} alt="" aria-hidden width={26} height={26} />
+            </a>
+          )}
           <ButtonLink href="/contact#consultation" variant="gradient" size="sm" withArrow>
             Book a Consultation
           </ButtonLink>
@@ -265,6 +287,19 @@ export function Header() {
               >
                 Book a Consultation
               </ButtonLink>
+
+              {linkedin && (
+                <a
+                  href={linkedin.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 flex min-h-11 items-center gap-3 rounded-md px-2 text-[0.9375rem] text-white/80 transition-colors duration-200 hover:bg-white/5 hover:text-white"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={LINKEDIN_MARK} alt="" aria-hidden width={22} height={22} />
+                  Follow us on LinkedIn
+                </a>
+              )}
             </div>
           </motion.nav>
         )}

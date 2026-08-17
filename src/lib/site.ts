@@ -25,7 +25,10 @@ export const company = {
     { days: "Saturday – Sunday", time: "On-call for managed IT clients" },
   ],
   social: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/" },
+    // Company ID 143142995. Deliberately NOT the /admin/dashboard/ URL the page
+    // admin sees — that path is admin-only and errors for everyone else.
+    // LinkedIn redirects this public form to the page's vanity slug.
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/143142995" },
     { label: "GitHub", href: "https://github.com/" },
     { label: "X", href: "https://x.com/" },
   ],
@@ -134,13 +137,16 @@ export const footerNav = [
       { label: "Contact", href: "/contact" },
     ],
   },
-  {
-    heading: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms & Conditions", href: "/terms-and-conditions" },
-    ],
-  },
+];
+
+/**
+ * Legal links. These sit in the footer's bottom bar beside the copyright
+ * rather than in the column grid — they are boilerplate every visitor knows
+ * to look for at the very bottom, and a whole column overstated them.
+ */
+export const legalNav = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
 ];
 
 export const siteUrl = "https://www.cloudmindsolutionsinc.com";

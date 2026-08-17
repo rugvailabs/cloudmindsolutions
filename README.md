@@ -55,6 +55,9 @@ Nothing here ships with a real image, client, or number. Search the codebase for
 - [x] Logo, favicon, app icons, and OG card — all derived from the supplied
       artwork by `python scripts/logo-assets.py`. Re-run it if new artwork lands.
 - [x] Real domain, phone, and email in `src/lib/site.ts`
+- [x] LinkedIn URL in `src/lib/site.ts` (`company.social`) — company ID
+      143142995, public form. Check it in a logged-out browser once.
+- [ ] GitHub and X in `company.social` are still bare placeholder roots
 - [x] Real WhatsApp number in `src/lib/site.ts` (`company.whatsapp.number`)
 - [ ] Team names, roles, and headshots in `src/lib/about-content.ts`
 - [ ] Legal review of both legal pages — they are drafts, not advice
